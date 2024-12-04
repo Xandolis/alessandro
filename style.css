@@ -1,0 +1,199 @@
+/* estilo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f3f3f3; /* Cinza claro */
+    color: #333; /* Cinza escuro */
+    line-height: 1.6;
+  }
+  
+  /* Cabeçalho */
+  header {
+    background-color: #fff; /* Branco para simplicidade */
+    color: #333;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    font-weight: 700;
+    color: #000000;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin-top: 10px;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+    position: relative;
+  }
+  
+  nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+  }
+  
+  /* Animação de deslizamento nos links do menu */
+  nav ul li a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #555;
+  }
+  
+  nav ul li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  /* Seção de Boas-Vindas */
+  .bemvindo {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #ffffff;
+    margin: 30px auto;
+    border-radius: 8px;
+    max-width: 800px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .bemvindo h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .bemvindo p {
+    font-size: 1.1em;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+ 
+  /* Layout Responsivo */
+  @media (max-width: 768px) {
+    nav ul li {
+      display: block;
+      margin: 8px 0;
+    }
+    
+    .bemvindo {
+      padding: 40px 10px;
+    }
+  }
+  
+  /* Seções e estilo das páginas adicionais */
+
+.sobre, .formacao, .portfolio, .contato {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #ffffff;
+  margin: 30px auto;
+  border-radius: 8px;
+  max-width: 800px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.nao-centralizado {
+  text-align: left; 
+  margin-left: 50px; 
+}
+
+.sobre h2, .formacao h2, .portfolio h2, .contato h2 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.contato form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.contato label {
+  text-align: left;
+  color: #333;
+  font-weight: 500;
+}
+
+.contato input[type="text"],
+.contato input[type="email"],
+.contato textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+}
+
+.contato button {
+  padding: 12px 20px;
+  font-size: 1em;
+  color: #ffffff;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contato button:hover {
+  background-color: #555;
+}
+
+  /* Efeito Fade-In para as seções ao rolar a página */
+.section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .section.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Estilo e animação para os campos de formulário focados */
+  input:focus, textarea:focus {
+    outline: none;
+  }
+  
+  .focused {
+    border: 2px solid #333;
+    transform: scale(1.02);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  
